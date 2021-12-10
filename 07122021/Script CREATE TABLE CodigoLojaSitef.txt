@@ -1,0 +1,13 @@
+CREATE TABLE [CodigoLojaSitef] (
+  [IdCodigoSitef]            INT IDENTITY (1,1)   NOT NULL,
+  [NumeroCodigoSitefLoja]    VARCHAR(50)     	  NOT NULL,
+  [DescricaoCodigoSitefLoja] VARCHAR(50)     	  NOT NULL,
+      PRIMARY KEY ( [IdCodigoSitef] ))
+
+--PRIMEIRO REGISTRO
+INSERT INTO CodigoLojaSitef (NumeroCodigoSitefLoja, DescricaoCodigoSitefLoja) 
+VALUES ('SC300039', 'Vero')
+
+--SEGUNDO REGISTRO
+INSERT INTO CodigoLojaSitef (NumeroCodigoSitefLoja, DescricaoCodigoSitefLoja) 
+VALUES ('PRPS7538', 'PagSeguro')
