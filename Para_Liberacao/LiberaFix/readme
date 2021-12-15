@@ -1,0 +1,7 @@
+
+------- Sequencia de Passos -------
+
+1 - Editar o arquivo LiberaFix.ini para o caminho da aplicação local e tb caminha da pasta que será gerado o fix 
+2 - Executa o LiberaFix.py para gerar o pacote de atualização de acordo com tempo de importação dos xpzs e compilação
+3 - Depois de gerado, copiar o .zip 'autofix.zip' para o pasta home do servidor /home/joseluiz/autofix.zip 
+4 - Executar o comando no servidor sudo ./autofix.sh e responder se ira atualizar todas as aplicações ou somente uma em especifico 
