@@ -1,4 +1,0 @@
-CREATE NONCLUSTERED INDEX [URAD0002] ON [RAD0002] (
-      [RadDat],
-      [RadDetTipPrd],
-      [RadDetBan])
