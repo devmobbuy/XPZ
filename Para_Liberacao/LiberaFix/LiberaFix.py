@@ -19,9 +19,13 @@ NaoIncluir.append(os.path.join(diretorioApp, "PublicTempStorage"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "CloudServices.config"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "log4j2.xml"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "client.cfg"))
+NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "GXcfg.class"))
+NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "GXApplication.class"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "qviewer", "services", "client.cfg"))
 NaoIncluir.append(os.path.join(diretorioApp, "gxmetadata", "LastTimeCopy"))
 NaoIncluir.append(os.path.join(diretorioApp, "static", "Resources", "LastTimeCopy"))
+NaoIncluir.append(os.path.join(diretorioApp, "static", "DeveloperMenu.xml"))
+NaoIncluir.append(os.path.join(diretorioApp, "static", "gxcfg.js"))
 
 def executa():
 
