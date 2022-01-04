@@ -3,7 +3,7 @@
 #ToDo: Testar usar a mesma var de 'resposta'.
 #ToDo: usar unzip -o (overwrite).
 
-caminhoFix=/home/joseluiz/autofix.zip
+caminhoFix=/home/joseluiz/fix/fix7/autofix.zip
 
 clear
 echo "Maravilha, é hora de atualizar o FIX!"
@@ -30,11 +30,15 @@ if echo "$resposta" | grep -iq "^s" ;then
 		
 		if (echo "$respostaT" | grep -iq "^01$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
-			echo "Realizando Backup banese"													
+			echo "Realizando Backup banese"		
+						
+						
 			cp -fR /opt/apache-tomcat-7.0.109/webapps/banese/ /opt/apache-tomcat-7.0.109/Backup/			
 			echo "Atualizando banese"
 			unzip $caminhoFix -d /opt/apache-tomcat-7.0.109/webapps/banese/	
-			sudo curl -u admin:MobPwd@12345 http://localhost:8087/manager/text/reload?path=/banese		
+
+			sudo curl -u admin:MobPwd@12345 http://localhost:8087/manager/text/reload?path=/banese
+		
 		fi
 
 		if (echo "$respostaT" | grep -iq "^02$") || (echo "$respostaT" | grep -iq "^00$") ;then
