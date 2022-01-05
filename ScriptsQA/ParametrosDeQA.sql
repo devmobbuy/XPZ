@@ -1,8 +1,4 @@
 UPDATE PARSIS
-SET ParCon = 'https://apigateway-qa.mobbuyapp.com/Account/login?username=bruno.crocco&password=Bemfacil@321'
-WHERE ParCod = 'APIGATEWAY_LOGIN'
-
-UPDATE PARSIS
 SET ParCon = 'portal.mobbuyapp.com'
 WHERE ParCod = 'CERC_AUTH_HOST_INTERNAL'
 
