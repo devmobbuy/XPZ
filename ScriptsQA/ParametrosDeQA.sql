@@ -1,5 +1,5 @@
 UPDATE PARSIS
-SET ParCon = ''
+SET ParCon = 'https://apigateway-qa.mobbuyapp.com/Account/login?username=bruno.crocco&password=Bemfacil@321'
 WHERE ParCod = 'APIGATEWAY_LOGIN'
 
 UPDATE PARSIS
