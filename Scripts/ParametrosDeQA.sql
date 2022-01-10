@@ -1,3 +1,7 @@
+UPDATE PARSIS 
+SET ParCon = 'N' 
+WHERE ParCod = 'SSL_OBRIGATORIO'
+
 UPDATE PARSIS
 SET ParCon = 'portal.mobbuyapp.com'
 WHERE ParCod = 'CERC_AUTH_HOST_INTERNAL'
