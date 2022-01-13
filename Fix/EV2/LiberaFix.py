@@ -23,6 +23,7 @@ NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "GXcfg.class"
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "GXApplication.class"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "Images.txt"))
 NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "classes", "qviewer", "services", "client.cfg"))
+NaoIncluir.append(os.path.join(diretorioApp, "WEB-INF", "PDFReport.ini"))
 NaoIncluir.append(os.path.join(diretorioApp, "gxmetadata", "LastTimeCopy"))
 NaoIncluir.append(os.path.join(diretorioApp, "static", "Resources", "LastTimeCopy"))
 NaoIncluir.append(os.path.join(diretorioApp, "static", "DeveloperMenu.xml"))
