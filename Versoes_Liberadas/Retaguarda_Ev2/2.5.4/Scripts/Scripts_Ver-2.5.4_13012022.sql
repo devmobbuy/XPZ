@@ -18,6 +18,104 @@ CREATE TABLE [LogUpdArq] (
   [LogUpdArqMsgErr] CHAR(60)			NULL,
       PRIMARY KEY ( [LogUpdArqNum] ))
 
+/********* TAREFA #14765 - CARLOS PATRICIO - 12/01/2022 ************************/
+/********************************************************************************
+Use Banese
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/banese/static/Resources/AssinaturaDirf/assinaturaBanese.jpeg',
+'012ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+/********************************************************************************
+Use BemFacil
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/bemfacil/static/Resources/AssinaturaDirf/assinaturaBemfacil.jpeg',
+'006ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+/********************************************************************************
+Use Credinov
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/credinov/static/Resources/AssinaturaDirf/assinaturaCredinov.jpeg',
+'026ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+/********************************************************************************
+Use CredPag
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/credpag/static/Resources/AssinaturaDirf/assinaturaCredpag.jpeg',
+'024ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+/********************************************************************************
+Use Pronto
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/pronto/static/Resources/AssinaturaDirf/assinaturaPronto.jpeg',
+'025ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+/********************************************************************************
+Use SmartPagamentos
+insert into PARSIS values (
+'DIRF_ASSINATURA',
+'Imagem da assinatura do responsável por assinar a DIRF',
+'IM',
+NULL,
+NULL,
+'N',
+'/opt/apache-tomcat-7.0.109/webapps/smartpagamentos/static/Resources/AssinaturaDirf/assinaturaSmartpagamentos.jpeg',
+'018ADM',
+'2022-01-12',
+NULL,
+NULL,
+0)
+***********************************************************************************/
+
 /* TAREFA #14658 - JOSÉ LUIZ */
 USE Banese
 USE Bemfacil
@@ -72,6 +170,64 @@ VALUES (25, 'SolCancelMaq_Grid')
 INSERT INTO sse2_grp_mod
 VALUES (25, 'ADM', 'SolCancelMaq_Grid')
 
+/* TAREFA #14705 - JOSÉ LUIZ */
+
+--Deletar parâmetro que não será mais utilizado
+DELETE FROM PARSIS
+WHERE ParCod = 'APIGATEWAY_LOGIN'
+
+--Adicionar parâmetro de usuário da API de Gateway
+INSERT INTO PARSIS
+VALUES ('APIGATEWAY_USER', 'Usuário da API de Gateway', 'VA', 40, NULL, 'N', 'bruno.crocco', 'ADMIN', '2022-01-05 12:04:05.000', NULL, NULL, 0)
+
+--Adicionar parâmetro de senha da API de Gateway
+INSERT INTO PARSIS
+VALUES ('APIGATEWAY_PASSWORD', 'Senha da API de Gateway', 'VA', 40, NULL, 'N', 'Bemfacil@321', 'ADMIN', '2022-01-05 12:04:05.000', NULL, NULL, 0)
+
+/* TAREFA #14561 - WESLEY */
+
+ALTER TABLE USUEST ADD  [UEstCodGru] INT NULL
+
+/* TAREFA #14637 - WESLEY */
+
+ALTER TABLE [BANCO] ADD [BanPesq] VARCHAR(50) NULL
+
+/* TAREFA #14428 - WESLEY */
+
+USE pronto
+
+INSERT INTO [dbo].[PARSIS]
+           ([ParCod]
+           ,[ParDsc]
+           ,[ParTipPar]
+           ,[ParTamPar]
+           ,[ParQtdDec]
+           ,[ParIndSin]
+           ,[ParCon]
+           ,[ParUsuInc]
+           ,[ParDtiInc]
+           ,[ParUsuAlt]
+           ,[ParDtiAlt]
+           ,[ParFlgInt])
+     VALUES
+           ('ControleVendas_CSV' 
+           ,'Pasta aonde vai ficar os CSV de controle de vendas.'
+           ,'CA'
+           ,200
+           ,NULL
+		   ,'N'
+           ,'/mnt/home1/SubAdquirencia/025/BI'
+           ,NULL
+           ,NULL
+           ,'025ADM                           '
+           ,'2022-01-12 17:00:36.000'
+           ,0)
+GO
+
+select * from Pronto..PARSIS where parcod = 'ControleVendas_CSV'
+--UPDATE PARSIS SET PARCON = '/mnt/home1/SubAdquirencia/025/BI' WHERE PARCOD = 'ControleVendas_CSV' -- QA
+--UPDATE PARSIS SET PARCON = 'C:\Temp'                          WHERE PARCOD = 'ControleVendas_CSV' -- LOCAL
+
  /* ALTERAÇÃO DA VERSÃO DO BANCO */
 USE Banese
 USE Bemfacil
@@ -87,6 +243,10 @@ WHERE ParCod = 'VERSAO_BANCO'
 UPDATE PARSIS
 SET ParCon = '13/01/2022'
 WHERE ParCod = 'VERSAO_BANCO_DATA'
+
+
+
+
  
  
 
