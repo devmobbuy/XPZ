@@ -14,7 +14,7 @@ INSERT INTO [dbo].[PARSIS]
            ,[ParDtiAlt]
            ,[ParFlgInt])
      VALUES
-           ('DIRF' 
+           ('RELATORIO_DIRF' 
            ,'Usar tela DIRF'
            ,'CA'
            ,200
@@ -28,5 +28,5 @@ INSERT INTO [dbo].[PARSIS]
            ,0)
 GO
 
-select * from Pronto..PARSIS where parcod = 'DIRF'
---UPDATE PARSIS SET PARCON = 'N' WHERE PARCOD = 'DIRF' -- QA
+select * from Pronto..PARSIS where parcod = 'RELATORIO_DIRF'
+--UPDATE PARSIS SET PARCON = 'S' WHERE PARCOD = 'RELATORIO_DIRF' -- QA
