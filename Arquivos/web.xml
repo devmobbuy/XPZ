@@ -6,7 +6,6 @@
                 <listener>
                         <listener-class>com.genexus.webpanels.ServletEventListener</listener-class>
                 </listener>
-				
                 <listener>
                         <listener-class>com.genexus.webpanels.SessionEventListener</listener-class>
                 </listener>
@@ -24,18 +23,17 @@
 				<servlet>
 						<servlet-name>GXValidService</servlet-name>
 				<servlet-class>com.genexus.webpanels.GXValidService</servlet-class>            				
-				</servlet>  
-				
-                <servlet>
-                        <servlet-name>agendaconsultacercpdf</servlet-name>
-                        <servlet-class>agendaconsultacercpdf</servlet-class>
+				</servlet>   
+
+				<servlet>
+                        <servlet-name>aagendaconsultacercpdf</servlet-name>
+                        <servlet-class>aagendaconsultacercpdf</servlet-class>
                 </servlet>
 				
                 <servlet>
                         <servlet-name>agendaconsulta_cerc</servlet-name>
                         <servlet-class>agendaconsulta_cerc</servlet-class>
-                </servlet>				
-							
+                </servlet>									
                 
                 <servlet>
                         <servlet-name>hvan0300_grid</servlet-name>
@@ -3200,6 +3198,11 @@
                         <servlet-name>sse2_fun</servlet-name>
                         <servlet-class>sse2_fun</servlet-class>
                 </servlet>
+				
+				<servlet>
+                        <servlet-name>seltabven</servlet-name>
+                        <servlet-class>seltabven</servlet-class>
+                </servlet>
 
                 <servlet>
                         <servlet-name>gx06a0</servlet-name>
@@ -4346,6 +4349,26 @@
                 <servlet>
                         <servlet-name>ahadq0400_pdf</servlet-name>
                         <servlet-class>ahadq0400_pdf</servlet-class>
+                </servlet>
+
+                <servlet>
+                        <servlet-name>hantpag0100_conf_aprov</servlet-name>
+                        <servlet-class>hantpag0100_conf_aprov</servlet-class>
+                </servlet>
+
+                <servlet>
+                        <servlet-name>hlogapi_grid</servlet-name>
+                        <servlet-class>hlogapi_grid</servlet-class>
+                </servlet>
+
+                <servlet>
+                        <servlet-name>ahlogapi_pdf</servlet-name>
+                        <servlet-class>ahlogapi_pdf</servlet-class>
+                </servlet>
+
+                <servlet>
+                        <servlet-name>hlogapi_det</servlet-name>
+                        <servlet-class>hlogapi_det</servlet-class>
                 </servlet>
 
 			    <servlet-mapping>
@@ -8268,6 +8291,11 @@
                         <servlet-name>auxctbclscli</servlet-name>
                         <url-pattern>/servlet/auxctbclscli</url-pattern>
                 </servlet-mapping>
+				
+				<servlet-mapping>
+                        <servlet-name>seltabven</servlet-name>
+                        <url-pattern>/servlet/seltabven</url-pattern>
+                </servlet-mapping>
 
                 <servlet-mapping>
                         <servlet-name>gx02k0</servlet-name>
@@ -8665,14 +8693,34 @@
                 </servlet-mapping>
 
                 <servlet-mapping>
-                        <servlet-name>agendaconsultacercpdf</servlet-name>
-                        <url-pattern>/servlet/agendaconsultacercpdf</url-pattern>
+                        <servlet-name>hantpag0100_conf_aprov</servlet-name>
+                        <url-pattern>/servlet/hantpag0100_conf_aprov</url-pattern>
+                </servlet-mapping>
+
+                <servlet-mapping>
+                        <servlet-name>hlogapi_grid</servlet-name>
+                        <url-pattern>/servlet/hlogapi_grid</url-pattern>
+                </servlet-mapping>
+
+                <servlet-mapping>
+                        <servlet-name>ahlogapi_pdf</servlet-name>
+                        <url-pattern>/servlet/ahlogapi_pdf</url-pattern>
+                </servlet-mapping>
+
+                <servlet-mapping>
+                        <servlet-name>hlogapi_det</servlet-name>
+                        <url-pattern>/servlet/hlogapi_det</url-pattern>
+                </servlet-mapping>
+				
+               <servlet-mapping>
+                        <servlet-name>aagendaconsultacercpdf</servlet-name>
+                        <url-pattern>/servlet/aagendaconsultacercpdf</url-pattern>
                 </servlet-mapping>
 				
                 <servlet-mapping>
                         <servlet-name>agendaconsulta_cerc</servlet-name>
                         <url-pattern>/servlet/agendaconsulta_cerc</url-pattern>
-                </servlet-mapping>				
+                </servlet-mapping>					
 
 				<context-param>
 				<param-name>gxcfg</param-name>
