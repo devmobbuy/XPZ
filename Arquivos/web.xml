@@ -6,6 +6,7 @@
                 <listener>
                         <listener-class>com.genexus.webpanels.ServletEventListener</listener-class>
                 </listener>
+				
                 <listener>
                         <listener-class>com.genexus.webpanels.SessionEventListener</listener-class>
                 </listener>
@@ -14,15 +15,27 @@
                         <servlet-name>GXResourceProvider</servlet-name>
                         <servlet-class>com.genexus.webpanels.GXResourceProvider</servlet-class>
                 </servlet>
-    						<servlet>
-    								<servlet-name>GXObjectUploadServices</servlet-name>
-            				<servlet-class>com.genexus.webpanels.GXObjectUploadServices</servlet-class>            				
-    						</servlet>
-    						
-    						<servlet>
-    								<servlet-name>GXValidService</servlet-name>
-            				<servlet-class>com.genexus.webpanels.GXValidService</servlet-class>            				
-    						</servlet>                
+				
+				<servlet>
+						<servlet-name>GXObjectUploadServices</servlet-name>
+				<servlet-class>com.genexus.webpanels.GXObjectUploadServices</servlet-class>            				
+				</servlet>
+				
+				<servlet>
+						<servlet-name>GXValidService</servlet-name>
+				<servlet-class>com.genexus.webpanels.GXValidService</servlet-class>            				
+				</servlet>  
+				
+                <servlet>
+                        <servlet-name>agendaconsultacercpdf</servlet-name>
+                        <servlet-class>agendaconsultacercpdf</servlet-class>
+                </servlet>
+				
+                <servlet>
+                        <servlet-name>agendaconsulta_cerc</servlet-name>
+                        <servlet-class>agendaconsulta_cerc</servlet-class>
+                </servlet>				
+							
                 
                 <servlet>
                         <servlet-name>hvan0300_grid</servlet-name>
@@ -3186,11 +3199,6 @@
                 <servlet>
                         <servlet-name>sse2_fun</servlet-name>
                         <servlet-class>sse2_fun</servlet-class>
-                </servlet>
-				
-				<servlet>
-                        <servlet-name>seltabven</servlet-name>
-                        <servlet-class>seltabven</servlet-class>
                 </servlet>
 
                 <servlet>
@@ -8260,11 +8268,6 @@
                         <servlet-name>auxctbclscli</servlet-name>
                         <url-pattern>/servlet/auxctbclscli</url-pattern>
                 </servlet-mapping>
-				
-				<servlet-mapping>
-                        <servlet-name>seltabven</servlet-name>
-                        <url-pattern>/servlet/seltabven</url-pattern>
-                </servlet-mapping>
 
                 <servlet-mapping>
                         <servlet-name>gx02k0</servlet-name>
@@ -8661,8 +8664,18 @@
                         <url-pattern>/servlet/ahadq0400_pdf</url-pattern>
                 </servlet-mapping>
 
-								<context-param>
-    							<param-name>gxcfg</param-name>
-    							<param-value>GXcfg</param-value>
-								</context-param>
+                <servlet-mapping>
+                        <servlet-name>agendaconsultacercpdf</servlet-name>
+                        <url-pattern>/servlet/agendaconsultacercpdf</url-pattern>
+                </servlet-mapping>
+				
+                <servlet-mapping>
+                        <servlet-name>agendaconsulta_cerc</servlet-name>
+                        <url-pattern>/servlet/agendaconsulta_cerc</url-pattern>
+                </servlet-mapping>				
+
+				<context-param>
+				<param-name>gxcfg</param-name>
+				<param-value>GXcfg</param-value>
+				</context-param>
 </web-app>
