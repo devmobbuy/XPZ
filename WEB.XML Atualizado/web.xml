@@ -24,6 +24,11 @@
 						<servlet-name>GXValidService</servlet-name>
 				<servlet-class>com.genexus.webpanels.GXValidService</servlet-class>            				
 				</servlet>   
+				
+				<servlet>
+                        <servlet-name>wwaviso</servlet-name>
+                        <servlet-class>wwaviso</servlet-class>
+                </servlet>				
 
 				<servlet>
                         <servlet-name>aagendaconsultacercpdf</servlet-name>
@@ -8730,10 +8735,15 @@
                 <servlet-mapping>
                         <servlet-name>ahantpag0100_det_pdf</servlet-name>
                         <url-pattern>/servlet/ahantpag0100_det_pdf</url-pattern>
-                </servlet-mapping>					
-
+                </servlet-mapping>	
+				
+                <servlet-mapping>
+                        <servlet-name>wwaviso</servlet-name>
+                        <url-pattern>/servlet/wwaviso</url-pattern>
+                </servlet-mapping>
+				
 				<context-param>
-				<param-name>gxcfg</param-name>
-				<param-value>GXcfg</param-value>
+					<param-name>gxcfg</param-name>
+					<param-value>GXcfg</param-value>
 				</context-param>
 </web-app>
