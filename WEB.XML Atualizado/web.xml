@@ -36,11 +36,6 @@
                 </servlet>			
 				
 				<servlet>
-                        <servlet-name>wpaviso</servlet-name>
-                        <servlet-class>wpaviso</servlet-class>
-                </servlet>	
-				
-				<servlet>
                         <servlet-name>aagendaconsultacercpdf</servlet-name>
                         <servlet-class>aagendaconsultacercpdf</servlet-class>
                 </servlet>
@@ -8755,11 +8750,6 @@
                 <servlet-mapping>
                         <servlet-name>aviso</servlet-name>
                         <url-pattern>/servlet/aviso</url-pattern>
-                </servlet-mapping>	
-				
-                <servlet-mapping>
-                        <servlet-name>wpaviso</servlet-name>
-                        <url-pattern>/servlet/wpaviso</url-pattern>
                 </servlet-mapping>		
 				
 				<context-param>
