@@ -33,7 +33,12 @@
 				<servlet>
                         <servlet-name>aviso</servlet-name>
                         <servlet-class>aviso</servlet-class>
-                </servlet>			
+                </servlet>	
+				
+				<servlet>
+                        <servlet-name>wpexecutaredecaptura</servlet-name>
+                        <servlet-class>wpexecutaredecaptura</servlet-class>
+                </servlet>	
 				
 				<servlet>
                         <servlet-name>aagendaconsultacercpdf</servlet-name>
@@ -8740,6 +8745,11 @@
                 <servlet-mapping>
                         <servlet-name>ahantpag0100_det_pdf</servlet-name>
                         <url-pattern>/servlet/ahantpag0100_det_pdf</url-pattern>
+                </servlet-mapping>	
+				
+                <servlet-mapping>
+                        <servlet-name>wpexecutaredecaptura</servlet-name>
+                        <url-pattern>/servlet/wpexecutaredecaptura</url-pattern>
                 </servlet-mapping>	
 				
                 <servlet-mapping>
