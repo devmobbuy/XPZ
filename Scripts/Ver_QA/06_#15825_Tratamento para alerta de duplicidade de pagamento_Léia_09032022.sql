@@ -9,11 +9,7 @@ CREATE TABLE [Processo] (
   [ProcessoMensagem]    VARCHAR(MAX) NULL,
   [ProcessoStatus]      VARCHAR(40)  NULL,
       PRIMARY KEY ( [ProcessoId] ));
-	  
-CREATE NONCLUSTERED INDEX [UPROCESSO] ON [Processo] (
-[ProcessoId] DESC)
 
-	  
 
  
  
