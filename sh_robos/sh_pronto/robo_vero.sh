@@ -16,14 +16,14 @@ fi
 
 date >> /mnt/home1/sistema/logs/pronto_robovero.lock
 
-cd /opt/apache-tomcat-7.0.109/webapps/pronto/WEB-INF/classes
+cd /opt/docker/volumes/pronto_7/webapps/pronto/WEB-INF/classes
 
-#Rotina de Calculo do Valor de Efeito.
-/opt/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:/usr/java/jdk1.7.0_71/bin/java  -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: calculovalorefeito >> /mnt/home1/sistema/logs/pronto_robovero.txt
+/opt/java/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: ptrn0800
+/opt/java/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: ptrn0810
 
 #Faz a geracao de arquivo para banco.
-/opt/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:/usr/java/jdk1.7.0_71/bin/java  -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: parb0099 >> /mnt/home1/sistema/logs/pronto_robovero.txt
-/opt/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:/usr/java/jdk1.7.0_71/bin/java  -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: parb0098 >> /mnt/home1/sistema/logs/pronto_robovero.txt
+/opt/java/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:/usr/java/jdk1.7.0_71/bin/java  -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: parb0099
+/opt/java/jdk1.8.0_291/bin/java -Dprocess="prontorobovero" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:/usr/java/jdk1.7.0_71/bin/java  -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.: parb0098
 
 FILES="`ls /mnt/home1/SubAdquirencia/025/reembolso/env`"
 

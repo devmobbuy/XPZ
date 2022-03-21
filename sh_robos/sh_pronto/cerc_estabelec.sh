@@ -1,10 +1,10 @@
-TASK="pronto_cancelarcessao"
+TASK="pronto_cercestabelec"
 PATHCLASSES="/opt/docker/volumes/pronto_7/webapps/pronto/WEB-INF/classes"
 PATHJAVA="/opt/java/jdk1.8.0_291/bin/java"
-TEXTCLASSPATH="-Dprocess="cancelarcessaoauto" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:"
-PROCESS1="cancelarcessaoauto"
+TEXTCLASSPATH="-Dprocess="prontocercestabelec" -classpath ../lib/commons-lang-2.4.jar:../lib/gxclassR.jar:../lib/Una2000.jar:../lib/iText.jar:../lib:.:../lib/gxclassR.jar:../lib/jtds-1.2.jar:../lib/ojdbc14.jar:.:"
+PROCESS1="pr_envia_estabelecimentos_cerc"
 
-QTPRC=`ps -fe | grep cancelarcessaoauto | wc -l`
+QTPRC=`ps -fe | grep prontocercestabelec | wc -l`
 if [ "${QTPRC:-0}" -gt "1" ]
 then
    exit
