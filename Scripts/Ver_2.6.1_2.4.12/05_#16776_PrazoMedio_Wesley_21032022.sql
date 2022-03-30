@@ -97,7 +97,7 @@ ON EC2.EfeitoContratoEstCod  = EC.EfeitoContratoEstCod   AND
    EC2.EfeitoContratoTitular = EC.EfeitoContratoTitular AND 
    EC2.EfeitoContratoDtaVenc = EC.Data_Vencimento
 
-INNER JOIN Est08_Aux02 M
+LEFT JOIN Est08_Aux02 M
 ON M.EstCod = E.EstCod
 
 GROUP BY E.EstCod,
