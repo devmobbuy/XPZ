@@ -91,6 +91,11 @@
                 </servlet>
 				
 				<servlet>
+                        <servlet-name>wpavisoregraselecao</servlet-name>
+                        <servlet-class>wpavisoregraselecao</servlet-class>
+                </servlet>
+				
+				<servlet>
                         <servlet-name>ahcerc_0100_pdf</servlet-name>
                         <servlet-class>ahcerc_0100_pdf</servlet-class>
                 </servlet>
@@ -5683,6 +5688,11 @@
                 <servlet-mapping>
                         <servlet-name>ahvan0100_pdf</servlet-name>
                         <url-pattern>/servlet/ahvan0100_pdf</url-pattern>
+                </servlet-mapping>
+				
+				<servlet-mapping>
+                        <servlet-name>wpavisoregraselecao</servlet-name>
+                        <url-pattern>/servlet/wpavisoregraselecao</url-pattern>
                 </servlet-mapping>
 				
 				 <servlet-mapping>
