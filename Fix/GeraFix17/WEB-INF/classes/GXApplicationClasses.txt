@@ -1,3 +1,0 @@
-pos_apelido_bc_services_rest
-api_lista_equipamentos_services_rest
-api_lista_equipamentos_services_rest
