@@ -44,6 +44,9 @@ CREATE NONCLUSTERED INDEX [UVAN050] ON [VAN04] (
       [VanTrnDta],
       [VanTrnHra])
 	  
+CREATE NONCLUSTERED INDEX [UVAN051] ON [VAN04] (
+      [VanTrnPosNumSer])	  
+	  
 --Table name: VAN02	  
 
 CREATE NONCLUSTERED INDEX [UVAN02] ON [VAN02] (
@@ -82,7 +85,7 @@ CREATE NONCLUSTERED INDEX [UPLNVEN1] ON [PLNVEN] (
       [PlvQtdPar])
 
 --Table name: LOGCON
-	  CREATE NONCLUSTERED INDEX [ULOGCON] ON [LOGCON] (
+CREATE NONCLUSTERED INDEX [ULOGCON1] ON [LOGCON] (
       [LocDtaMov])
 	  
 --Table name: ADQ0001
@@ -108,3 +111,13 @@ CREATE NONCLUSTERED INDEX [UTRN07] ON [TRN07] (
 --Alteração na tabela de processo
 ALTER TABLE [Processo]
 ALTER COLUMN [ProcessoRotina] VARCHAR(250) NULL
+
+--Table name: ADQ0004
+CREATE NONCLUSTERED INDEX [UADQ0004] ON [ADQ0004] (
+      [AdqCod],
+      [AdqArqNum] DESC)
+	  
+	  
+--Table name: TermoUsuario	  
+CREATE NONCLUSTERED INDEX [UTERMOUSUARIO] ON [TermoUsuario] (
+      [TermoUsuarioAceitoDtaHr] DESC)	  
