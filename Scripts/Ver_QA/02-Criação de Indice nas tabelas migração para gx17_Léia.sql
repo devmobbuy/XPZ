@@ -121,3 +121,35 @@ CREATE NONCLUSTERED INDEX [UADQ0004] ON [ADQ0004] (
 --Table name: TermoUsuario	  
 CREATE NONCLUSTERED INDEX [UTERMOUSUARIO] ON [TermoUsuario] (
       [TermoUsuarioAceitoDtaHr] DESC)	  
+	  
+--Table name: Cessao	  
+CREATE NONCLUSTERED INDEX [UCESSAO5] ON [Cessao] (
+      [CessaoEstCodOri],
+      [CessaoStatusId],
+      [CessaoEstCodBen],
+      [CessaoDtaLiq])	  
+	  
+-- Table name: EST05	  
+CREATE NONCLUSTERED INDEX [UEST05] ON [EST05] (
+[EstCod],
+[EstRemTip])
+
+-- Table name: MovTrn01
+CREATE NONCLUSTERED INDEX [UMOVTRN019] ON [MovTrn01] (
+      [MovTrnDta],
+      [MovTrnVlr] DESC)
+	  
+	  
+--Table name: SOLBOB
+CREATE NONCLUSTERED INDEX [USOLBOB1] ON [SOLBOB] (
+      [EstCod],
+      [SobNumSol] DESC)
+
+--Table name: CNTBAN
+CREATE NONCLUSTERED INDEX [UCNTBAN1] ON [CNTBAN] (
+      [CntSts])
+	  
+--Table name: REMBOB	  
+CREATE NONCLUSTERED INDEX [UREMBOB] ON [REMBOB] (
+      [EstCod],
+      [RebNumSeq] DESC)
