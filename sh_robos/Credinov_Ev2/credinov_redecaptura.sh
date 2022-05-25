@@ -17,7 +17,7 @@ fi
 
 date >> /mnt/home1/sistema/logs/credinov_redecaptura.lock
 
-cd /opt/apache-tomcat-7.0.109/webapps/bemfacil/WEB-INF/classes
+cd /opt/apache-tomcat-7.0.109/webapps/credinov/WEB-INF/classes
 
 echo "INICIANDO credinov_redecaptura.sh " >> /mnt/home1/sistema/logs/credinov_redecaptura.txt
 
