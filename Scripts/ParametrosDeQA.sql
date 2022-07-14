@@ -69,3 +69,6 @@ WHERE ParCod = 'URL_TOKEN_CERC'
 UPDATE PARSIS
 SET ParCon = 'http://64.227.0.44:8089/Monitoramento/rest/MonitoramentoTransacaoWS'
 WHERE ParCod = 'URL_VERIFICA_MONITOR'
+
+UPDATE PARSIS SET ParCon = 'https://sistemas.mobbuyapp.com/prontoev15/rest/LiquidaCessaoV2WS'
+WHERE PARCOD = 'LIQUIDA_CESSAO'
