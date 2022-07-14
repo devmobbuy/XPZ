@@ -5,13 +5,13 @@ ALTER VIEW TxAntManualVw
 AS
 SELECT
 	A.AnpCodEst AS 'TxAntManualEstCod',
-	A.AnpDtiSol AS 'TxAntManualData',
+	A.AnpDtiApv AS 'TxAntManualData',
 	SUM(L.LaaVlrTxaAnt) AS 'TxAntManualVlr'
 FROM LANANT L
 INNER JOIN ANTPAG A
 ON L.AnpNumAnt = A.AnpNumAnt AND A.AnpStsAnt = 2
 
-GROUP BY A.AnpCodEst, A.AnpDtiSol
+GROUP BY A.AnpCodEst, A.AnpDtiApv
 
 -----------------------------------------------------------------------------------------------------
 
