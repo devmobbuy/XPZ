@@ -1,5 +1,6 @@
 /* TAREFA #18631 - JOSÉ */
 
+--Rodar em todos os clientes (Se a tabela já existir, dar um DROP TABLE e Rodar esse script
 CREATE TABLE [EST002] ( 
   [EstCod]       INT    NOT NULL, 
   [EstTipDoc]    SMALLINT    NOT NULL, 
