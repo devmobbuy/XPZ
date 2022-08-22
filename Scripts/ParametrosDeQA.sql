@@ -11,6 +11,14 @@ SET ParCon = 'S'
 WHERE ParCod = 'HOMOLOG'
 
 UPDATE PARSIS
+SET PARCON = 'ap-homolog.cerc.inf.br'
+WHERE PARCOD IN (
+'CERC_AUTH_HOST',
+'CERC_HOST'
+)
+
+
+UPDATE PARSIS
 SET ParCon = 'apigateway-qa.mobbuyapp.com'
 WHERE ParCod = 'LINKPAGAMENTOAPI_HOST'
 
