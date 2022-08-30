@@ -33,61 +33,61 @@ if echo "$resposta" | grep -iq "^s" ;then
 		if (echo "$respostaT" | grep -iq "^01$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup credinov"	
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/credinov-v17up8												
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/credinov-v17up8/ /opt/apache-tomcat-9.0.46/Backup/			
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_credinov												
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_credinov/ /opt/apache-tomcat-9.0.46/Backup/			
 			echo "Atualizando credinov"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/credinov-v17up8/	
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/credinov-v17up8	
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_credinov/	
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_credinov	
 		fi
 
 		if (echo "$respostaT" | grep -iq "^02$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup thepay"
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/thepay-v17up8
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/thepay-v17up8/ /opt/apache-tomcat-9.0.46/Backup/
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_thepay
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_thepay/ /opt/apache-tomcat-9.0.46/Backup/
 			echo "Atualizando thepay"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/thepay-v17up8/			
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/thepay-v17up8
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_thepay/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_thepay
 		fi
 		
 		if (echo "$respostaT" | grep -iq "^03$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup credpag"		
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/credpag-v17up8	
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/credpag-v17up8/ /opt/apache-tomcat-9.0.46/Backup/
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_credpag	
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_credpag/ /opt/apache-tomcat-9.0.46/Backup/
 			echo "Atualizando credpag"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/credpag-v17up8/
-      sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/credpag-v17up8
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_credpag/
+      sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_credpag
 		fi
 		
 		if (echo "$respostaT" | grep -iq "^04$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup pronto"
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/pronto-v17up8			
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/pronto-v17up8/ /opt/apache-tomcat-9.0.46/Backup/
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_pronto			
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_pronto/ /opt/apache-tomcat-9.0.46/Backup/
 			echo "Atualizando pronto"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/pronto-v17up8/			
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/pronto-v17up8
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_pronto/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_pronto
 		fi
 				
 		if (echo "$respostaT" | grep -iq "^05$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup smartpagamentos"			
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/smartpagamentos-v17up8
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/smartpagamentos-v17up8/ /opt/apache-tomcat-9.0.46/Backup/
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_smartpagamentos
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_smartpagamentos/ /opt/apache-tomcat-9.0.46/Backup/
 			echo "Atualizando smartpagamentos"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/smartpagamentos-v17up8/			
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/smartpagamentos-v17up8
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_smartpagamentos/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_smartpagamentos
 		fi	
 		
 		if (echo "$respostaT" | grep -iq "^06$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup Banese"			
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/banese-v17up8
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/banese-v17up8/ /opt/apache-tomcat-9.0.46/Backup/
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/endpoint_banese
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/endpoint_banese/ /opt/apache-tomcat-9.0.46/Backup/
 			echo "Atualizando Banese"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/banese-v17up8/			
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/banese-v17up8
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/endpoint_banese/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/endpoint_banese
 		fi		
 		
 		echo ""

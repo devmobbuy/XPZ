@@ -21,10 +21,11 @@ if echo "$resposta" | grep -iq "^s" ;then
 		echo "Qual cliente deseja atualizar?"
 		echo "00 = TODOS"
 		echo "01 = credinov"
-		echo "02 = bemfacil"
+		echo "02 = thepay"
 		echo "03 = credpag"
 		echo "04 = pronto"
 		echo "05 = smartpagamentos"
+		echo "06 = banese"
 	
 		read respostaT
 		
@@ -40,12 +41,12 @@ if echo "$resposta" | grep -iq "^s" ;then
 
 		if (echo "$respostaT" | grep -iq "^02$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
-			echo "Realizando Backup bemfacil"
-      rm -rf  /opt/apache-tomcat-9.0.46/Backup/bemfacilev15
-			cp -fR /opt/apache-tomcat-9.0.46/webapps/bemfacilev15/ /opt/apache-tomcat-9.0.46/Backup/
-			echo "Atualizando bemfacil"
-			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/bemfacilev15/			
-			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/bemfacilev15
+			echo "Realizando Backup thepay"
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/thepayev15
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/thepayev15/ /opt/apache-tomcat-9.0.46/Backup/
+			echo "Atualizando thepay"
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/thepayev15/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/thepayev15
 		fi
 		
 		if (echo "$respostaT" | grep -iq "^03$") || (echo "$respostaT" | grep -iq "^00$") ;then
@@ -77,21 +78,31 @@ if echo "$resposta" | grep -iq "^s" ;then
 			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/smartpagamentosev15/			
 			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/smartpagamentosev15
 		fi			
+   
+    if (echo "$respostaT" | grep -iq "^06$") || (echo "$respostaT" | grep -iq "^00$") ;then
+			echo ""
+			echo "Realizando Backup banese"			
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/baneseev15
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/baneseev15/ /opt/apache-tomcat-9.0.46/Backup/
+			echo "Atualizando banese"
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/baneseev15/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/baneseev15
+		fi			
 		
 		echo ""
 		echo ""
-		echo "Certo, não há mais o que fazer por enquanto."
-		echo "Até mais!"
+		echo "Certo, nÃ£o hÃ¡ mais o que fazer por enquanto."
+		echo "AtÃ© mais!"
 		exit
 		
 	else
 		echo ""
-		echo "Opa, não encontrei a pasta WEB-INF ou static na raiz do arquivo $caminhoFix."
-		echo "Não fizemos nada por enquanto. Até mais!"
+		echo "Opa, nÃ£o encontrei a pasta WEB-INF ou static na raiz do arquivo $caminhoFix."
+		echo "NÃ£o fizemos nada por enquanto. AtÃ© mais!"
 		exit
 	fi
 else
-	echo "Certo, não fizemos nada por enquanto."
-	echo "Até mais!"
+	echo "Certo, nÃ£o fizemos nada por enquanto."
+	echo "AtÃ© mais!"
 	exit
 fi
