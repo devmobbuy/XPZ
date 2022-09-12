@@ -1,14 +1,11 @@
-/*RODAR APENAS PARA CLIENTE PRONTO*/
-USE [Pronto]
+USE PRONTO
 GO
 
-/****** Object:  StoredProcedure [dbo].[InsereRelTempAuditoria]    Script Date: 12/09/2022 17:07:54 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 CREATE Procedure [dbo].[InsereRelTempAuditoria]( @ESTCOD as integer, @UsrId as Varchar(20) )
 As
@@ -30,8 +27,8 @@ F.VALOR_CESSAO,
 D.CUSTO_ANTECIPACAO,
 E.VALOR_CANCELADO,
 C.VALOR_ABERTO,
-@UsrId,
-GetDate()
+GetDate(),
+@UsrId
 FROM MOVTRN01 A
 LEFT JOIN (
 SELECT VLPMOVTRNID,
@@ -95,8 +92,8 @@ IIF(VlpIdCreditTransaction > 0 AND VLPSTSPAG = 6, VlpVlrPag, 0) VALOR_CESSAO,
 IIF(VLPANPNUM > 0, (SELECT LaaVlrTxaAnt FROM LANANT WHERE LAANUMLAN = A.VLPNUMLAN), 0) ANTECIPADO,
 IIF(VlpStspag = 3, VLPVLRPAG, 0) CANCELADO,
 IIF(VlpStspag = 1, VlpVlrPag, 0) VALOR_ABERTO,
-@UsrId,
-GetDate()
+GetDate(),
+@UsrId
 FROM VLRPAG A
 LEFT JOIN MovTrn01 B
 ON A.VlpMovTrnId = B.MovTrnId
@@ -107,6 +104,3 @@ WHERE CessaoEstCodBen = @ESTCOD
 AND CessaoStatusId = 1);
 
 END
-GO
-
-
