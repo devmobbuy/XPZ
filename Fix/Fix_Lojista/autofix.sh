@@ -26,6 +26,7 @@ if echo "$resposta" | grep -iq "^s" ;then
 		echo "04 = pronto"
 		echo "05 = smartpagamentos"
 		echo "06 = banese"
+		echo "07 = pagmoda"
 	
 		read respostaT
 		
@@ -79,7 +80,7 @@ if echo "$resposta" | grep -iq "^s" ;then
 			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/smartpagamentosev15
 		fi			
    
-    if (echo "$respostaT" | grep -iq "^06$") || (echo "$respostaT" | grep -iq "^00$") ;then
+		if (echo "$respostaT" | grep -iq "^06$") || (echo "$respostaT" | grep -iq "^00$") ;then
 			echo ""
 			echo "Realizando Backup banese"			
       rm -rf  /opt/apache-tomcat-9.0.46/Backup/baneseev15
@@ -87,7 +88,17 @@ if echo "$resposta" | grep -iq "^s" ;then
 			echo "Atualizando banese"
 			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/baneseev15/			
 			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/baneseev15
-		fi			
+		fi
+
+		if (echo "$respostaT" | grep -iq "^07$") || (echo "$respostaT" | grep -iq "^00$") ;then
+			echo ""
+			echo "Realizando Backup pagmoda"			
+      rm -rf  /opt/apache-tomcat-9.0.46/Backup/pagmodaev15
+			cp -fR /opt/apache-tomcat-9.0.46/webapps/pagmodaev15/ /opt/apache-tomcat-9.0.46/Backup/
+			echo "Atualizando pagmoda"
+			unzip -o $caminhoFix -d /opt/apache-tomcat-9.0.46/webapps/pagmodaev15/			
+			sudo curl -u admin:MobPwd@12345 http://localhost:8089/manager/text/reload?path=/pagmodaev15
+		fi
 		
 		echo ""
 		echo ""
