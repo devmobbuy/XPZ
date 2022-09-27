@@ -411,11 +411,10 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-
 USE [Pronto]
 GO
 
-/****** Object:  StoredProcedure [dbo].[RELTEMPAUDITORIA]    Script Date: 26/09/2022 14:39:20 ******/
+/****** Object:  StoredProcedure [dbo].[RELTEMPAUDITORIA]    Script Date: 27/09/2022 15:32:11 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -752,6 +751,32 @@ WHERE NOT NSU IS NULL AND NOT AUT IS NULL
 GROUP BY NSU, AUT, B.MovTrnDta, B.MovTrnVlr, B.MovTrnTipPrd, B.MovTrnBan, B.MovTrnCod, B.MovTrnVlrLiqEst;
 
 /*INSERT ANALITICO AGRUPADO - FIM*/
+
+/*INSERT ANALITICO AJUSTES - INICIO*/
+INSERT INTO RtAnalitico (RtAnaliticoEstCod, RtAnaliticoNsu, RtAnaliticoAutcod, RtAnaliticoDataTrn, RtAnaliticoProduto,
+RtAnaliticoBandeira, RtAnaliticoTrnCod, RtAnaliticoValorTrn, RtAnaliticoValorLiqEst, RtAnaliticoValorPago,
+RtAnaliticoValorAberto, RtAnaliticoValorCancelado, RtAnaliticoCessao, RtAnaliticoValorAnt, RtAnaliticoCessaoBNF,
+RtAnaliticoValorPagoBNF, RtAnaliticoValorConc)
+SELECT A.EstCod, A.MovTrnNsu, A.MovTrnAutCodStr, A.MovTrnDta, 'AJUSTE', A.MovTrnBan, A.MovTrnCod,
+A.MovTrnVlr, A.MovTrnVlrLiqEst, B.VALORPAGO, B.VALORABERTO, B.VALORCANCELADO,
+B.VALORCESSAOORI, B.CUSTOANT, B.VALORCESSAOBNF, B.PAGOBNF, B.VALORCONCILIADO
+FROM MovTrn01 A INNER JOIN (
+SELECT VLPMOVTRNID,
+IIF(VlpStspag = 2, SUM(VlpVlrPag), 0) VALORPAGO,
+IIF(VlpStspag = 1, SUM(VlpVlrPag), 0) VALORABERTO,
+IIF(VlpStspag = 3, SUM(VlpVlrPag), IIF(VlpStspag = 9, SUM(VlpVlrPag), 0)) VALORCANCELADO,
+IIF(VlpStspag = 6, SUM(VlpVlrPag), 0) VALORCONCILIADO,
+IIF(VlpStspag = 6 AND VLPIDCREDITTRANSACTION > 0, SUM(VlpVlrPag), 0) VALORCESSAOORI,
+IIF(VlpStspag = 6 AND VLPIDCREDITTRANSACTIONPAI > 0, SUM(VlpVlrPag), 0) VALORCESSAOBNF,
+IIF(VlpAnpNum > 0, SUM(VLPVLRORIPAG - VlpVlrPag), 0) CUSTOANT,
+0 PAGOBNF
+FROM VLRPAG
+WHERE EstCod = @ESTCOD AND VlpNsu = 0
+GROUP BY VlpMovTrnId, VlpStspag, VlpIdCreditTransaction, VlpIdCreditTransactionPai, VlpAnpNum
+) B
+ON A.MovTrnId = B.VlpMovTrnId
+WHERE A.EstCod = @ESTCOD AND MovTrnNsu = 0
+/*INSERT ANALITICO AJUSTES - FIM*/
 
 /*INSERT CONSOLIDADO - INICIO*/
 SELECT @MOVTRNVLRVENDA = COALESCE(SUM(MovTrnVlr), 0), @MOVTRNVLRLIQVENDA = COALESCE(SUM(MovTrnVlrLiqEst),0) 
