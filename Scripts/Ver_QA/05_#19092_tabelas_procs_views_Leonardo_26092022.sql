@@ -425,7 +425,7 @@ GO
 USE [Pronto]
 GO
 
-/****** Object:  StoredProcedure [dbo].[RELTEMPAUDITORIA]    Script Date: 30/09/2022 16:34:10 ******/
+/****** Object:  StoredProcedure [dbo].[RELTEMPAUDITORIA]    Script Date: 06/10/2022 09:52:01 ******/
 SET ANSI_NULLS ON
 GO
 
