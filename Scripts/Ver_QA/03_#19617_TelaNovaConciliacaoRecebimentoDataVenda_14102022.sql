@@ -1,3 +1,5 @@
+--Rodar script em todos os bancos de clientes
+
 INSERT INTO sse2_mod (MOD2Id, MOD2IdInt, MOD2Dsc, MOD2Url, MOD2MtdLib, MOD2Aux, MOD2Sts, Mod2LstSub)
 VALUES ('wpConcRecebDataVen', 'wpConcRecebDataVen', 'Conciliação recebimentos por data da venda', '', '', 0, 1, '')
 
@@ -11,3 +13,10 @@ SELECT * FROM sse2_ung
 
 INSERT INTO sse2_grp_mod
 VALUES (25, 'ADM', 'wpConcRecebDataVen') --Dar o SELECT de cima na sse2_ung e pagar o UNG2Cod e alterar conforme o valor de cada cliente
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE NONCLUSTERED INDEX [UMOVTRN0110] ON [MovTrn01] (
+      [MovTrnDta],
+      [AdqCod],
+      [MovTrnBan])
