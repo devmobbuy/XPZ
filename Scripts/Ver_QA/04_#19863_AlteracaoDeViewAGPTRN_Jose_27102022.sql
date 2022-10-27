@@ -40,6 +40,8 @@ ALTER view [dbo].[AGPTRN] as
 		AptNumVlr	 = v.VlpNumLan ,
         AptDtiInc	 = getdate() ,
 		AptUsuInc	 = '',
-		AptVlpDtiInc = v.VlpDtiInc 
-    from VlrPag v inner join movtrn01 m on ( m.movtrnid = v.VlpMovTrnId ) 
+		AptVlpDtiInc = v.VlpDtiInc,
+		AptVlpArbNum = v.VlpArbNum,
+		AptArbDtaMov = a.ArbDtaMov
+    from VlrPag v inner join movtrn01 m on ( m.movtrnid = v.VlpMovTrnId ) left join ARQBAN a on a.ArbNum = v.VlpArbNum
 	where v.VlpStspag not in (3,4) and MovTrnCod <> 'CC' and MovTrnIdCan = 0
