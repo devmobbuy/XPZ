@@ -1,5 +1,6 @@
 /* SEM TAREFA - JOSÉ */
 
+--Rodar script em todos os clientes atualizados com a versão
 ALTER view [dbo].[AgdPag01] as
 select
 AgdPg1Dta = v.VlpDtaVct ,
