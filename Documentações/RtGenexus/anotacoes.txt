@@ -1,0 +1,21 @@
+Documentação Relatório executado via procedure SQL SERVER
+
+11/11/2022
+
+Até o momento, os clientes que utilizam desses relatórios são Pronto e Banese. Constitui das seguintes tabelas:
+
+	- RtConsolidado
+	- RtAnalitico
+	- RtPago
+	- RtPagoBnf
+	- RtAberto
+	- RtAjuste
+	- RtCessaoOri (Apenas pronto)
+	- RtCessaoBen (Apenas pronto)
+	- RtCancelado
+	- RtConciliado
+	- RtAntecipacao
+	
+Cada cliente tera uma procedure própria de acordo com sua característica de negócio
+
+Procedure RelTempAuditoria
