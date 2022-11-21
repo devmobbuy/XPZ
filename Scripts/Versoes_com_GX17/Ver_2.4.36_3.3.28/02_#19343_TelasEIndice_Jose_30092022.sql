@@ -5,7 +5,7 @@ USE Pronto
 
 INSERT INTO Parsis
 VALUES('REPROCLIQUIDACESSAO', 'URL da API de liquidar cessão no reprocessamento', 'VA', 255, NULL, 'N', 
-'https://sistemas.mobbuyapp.com/prontoev15/rest/LiquidaCessaoWS', '025ADM', '2022-09-22 09:22:00.000', '025ADM', NULL, 0)
+'https://acesso.semprepronto.com.br/prontoev15/rest/LiquidaCessaoWS', '025ADM', '2022-09-22 09:22:00.000', '025ADM', NULL, 0)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
