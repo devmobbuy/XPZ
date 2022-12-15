@@ -6,4 +6,6 @@ VALUES (
 'SMART_SKIP_MOVIMENTO', 'S', 'CA', 1
 ),(
 'SMART_SKIP_VALOR', '20000', 'CA', 20
+),(
+'NOVA_CAPTURA', 'S', 'CA', 1
 )
