@@ -4,8 +4,6 @@
 --SELECT ParCon FROM PARSIS WHERE PARCOD = 'ADI_PIX_CLIENTID'
 --SELECT ParCon FROM PARSIS WHERE PARCOD = 'ADI_PIX_USUARIO'
 --SELECT ParCon FROM PARSIS WHERE PARCOD = 'ADI_PIX_SENHA'
---SELECT ParCon FROM PARSIS WHERE PARCOD = 'ADI_Pix_ESPECIFICA'
---SELECT ParCon FROM PARSIS WHERE PARCOD = 'ADI_PIX_DATA_PROCESS'
 
 INSERT INTO PARSIS 
 (ParCod, ParDsc, ParTipPar, ParTamPar, ParIndSin, ParCon)
@@ -36,13 +34,3 @@ INSERT INTO PARSIS
 (ParCod, ParDsc, ParTipPar, ParTamPar, ParIndSin, ParCon)
 VALUES
 ('ADI_PIX_SENHA', 'Senha da API de transações PIX', 'CA', 80, 'N', '8f543df1d7571e92db14b5fa067552e6')
-
-INSERT INTO PARSIS 
-(ParCod, ParDsc, ParTipPar, ParTamPar, ParIndSin, ParCon)
-VALUES
-('ADI_Pix_ESPECIFICA', 'Tem data especifica para rodar da API de transações PIX ? ', 'CA', 80, 'N', 'S')
-
-INSERT INTO PARSIS 
-(ParCod, ParDsc, ParTipPar, ParTamPar, ParIndSin, ParCon)
-VALUES
-('ADI_PIX_DATA_PROCESS', 'Data especifica da API de transações PIX (AAA-MM-DD)', 'CA', 80, 'N', '2022-07-01')

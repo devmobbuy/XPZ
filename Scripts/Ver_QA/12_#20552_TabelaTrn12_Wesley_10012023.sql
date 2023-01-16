@@ -20,8 +20,18 @@ CREATE TABLE [Trn12] (
   [Nsu_pagamento]           VARCHAR(20)    NULL,
   [Valor_tarifa_pagamento]  DECIMAL(17,2)    NULL,
   [Situacao_pagamento]      VARCHAR(20)    NULL,
+  [Json_Entrada]            VARCHAR(MAX)    NULL,
   [Loc_Num_Log]             DECIMAL(18)    NULL,
   [Status_Processamento]    VARCHAR(40)    NULL,
   [Dt_hr_Importacao]        DATETIME    NULL,
-  [Json_Entrada]            VARCHAR(MAX)    NULL,
+  [Dt_hr_Processamento]     DATETIME    NULL,
+  [MovTrnId]                DECIMAL(18)    NULL,
      PRIMARY KEY ( [Transaction_pix] ))
+CREATE NONCLUSTERED INDEX [UTRN12] ON [Trn12] (
+      [Transaction_pix],
+      [Status_Processamento],
+      [Situacao_cobranca])
+CREATE NONCLUSTERED INDEX [ITRN13] ON [Trn12] (
+      [MovTrnId])
+ALTER TABLE [Trn12]
+ ADD CONSTRAINT [ITRN13] FOREIGN KEY ( [MovTrnId] ) REFERENCES [MovTrn01]([MovTrnId])
