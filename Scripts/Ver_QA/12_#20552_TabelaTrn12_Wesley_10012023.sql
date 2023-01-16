@@ -22,16 +22,26 @@ CREATE TABLE [Trn12] (
   [Situacao_pagamento]      VARCHAR(20)    NULL,
   [Json_Entrada]            VARCHAR(MAX)    NULL,
   [Loc_Num_Log]             DECIMAL(18)    NULL,
-  [Status_Processamento]    VARCHAR(40)    NULL,
   [Dt_hr_Importacao]        DATETIME    NULL,
-  [Dt_hr_Processamento]     DATETIME    NULL,
+  [Status_Movimento]        VARCHAR(40)    NULL,
   [MovTrnId]                DECIMAL(18)    NULL,
+  [Status_Lancamento]       VARCHAR(40)    NULL,
+  [VlpNumLan]               DECIMAL(18)    NULL,
+    [Dt_hr_Processamento]     DATETIME    NULL,
      PRIMARY KEY ( [Transaction_pix] ))
 CREATE NONCLUSTERED INDEX [UTRN12] ON [Trn12] (
       [Transaction_pix],
-      [Status_Processamento],
+      [Status_Movimento],
+      [Status_Lancamento],
       [Situacao_cobranca])
 CREATE NONCLUSTERED INDEX [ITRN13] ON [Trn12] (
       [MovTrnId])
+CREATE NONCLUSTERED INDEX [UTRN121] ON [Trn12] (
+      [Status_Movimento],
+      [Status_Lancamento])
+CREATE NONCLUSTERED INDEX [ITRN14] ON [Trn12] (
+      [VlpNumLan])
 ALTER TABLE [Trn12]
  ADD CONSTRAINT [ITRN13] FOREIGN KEY ( [MovTrnId] ) REFERENCES [MovTrn01]([MovTrnId])
+ALTER TABLE [Trn12]
+ ADD CONSTRAINT [ITRN14] FOREIGN KEY ( [VlpNumLan] ) REFERENCES [VLRPAG]([VlpNumLan])
