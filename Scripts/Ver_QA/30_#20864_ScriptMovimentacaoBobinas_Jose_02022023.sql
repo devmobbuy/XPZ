@@ -43,7 +43,7 @@ ADD CONSTRAINT [IBOBINAEMAIL1] FOREIGN KEY ( [MovBobinaId] ) REFERENCES [Movimen
 --------------------------------------------------------------------------------------------------------------------
  
 UPDATE PARSIS
-SET ParCon = '<p>Caro Administrador,<br /><br />&emsp;&emsp;&emsp;Acaba de ser registrado em nosso sistema</p><p>&emsp;&emsp;&emsp;Nova Solicita&ccedil;&atilde;o de Bobina&nbsp;</p>&emsp;&emsp;&emsp;Registrada pelo robô de movimentação de bobinas <br><br>&emsp;&emsp;&emsp;EC:<br><b>&emsp;&emsp;&emsp;[ESTABELECIMENTO]</b><br><br>&emsp;&emsp;&emsp;Favor Providenciar ou entrar em contato.<P>Atenciosamente<br>Sistema</p><u>Nâo responda essa mensagem ela é automática e gerada pelo sistema de Gestão de SubAdquirentes</u>'
+SET ParCon = '<p>Caro Administrador,<br /><br />&emsp;&emsp;&emsp;Acaba de ser registrado em nosso sistema</p><p>&emsp;&emsp;&emsp;Nova Solicita&ccedil;&atilde;o de Bobina&nbsp;</p>&emsp;&emsp;&emsp;Registrada pelo [ORIGEM] <br><br>&emsp;&emsp;&emsp;EC:<br><b>&emsp;&emsp;&emsp;[ESTABELECIMENTO]</b><br><br>&emsp;&emsp;&emsp;Favor Providenciar ou entrar em contato.<P>Atenciosamente<br>Sistema</p><u>Nâo responda essa mensagem ela é automática e gerada pelo sistema de Gestão de SubAdquirentes</u>'
 WHERE ParCod = 'SOLICITABOBINA_EMAILMSG'
 
 ----------------------------------------------------------------------------------------------------------------------
