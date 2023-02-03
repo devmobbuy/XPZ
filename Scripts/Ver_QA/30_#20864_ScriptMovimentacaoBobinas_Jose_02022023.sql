@@ -1,5 +1,6 @@
 /* TAREFA #20864 - JOSÉ */
 
+--Rodar script em todos os clientes que serão atualizados
 CREATE TABLE [MovimentacaoBobina] (
   [MovBobinaId]        INT    NOT NULL    IDENTITY ( 1 , 1 ),
   [MovBobinaTipo]      CHAR(20)    NULL,
@@ -51,10 +52,10 @@ INSERT INTO sse2_mod (MOD2Id, MOD2IdInt, MOD2Dsc, MOD2Url, MOD2MtdLib, MOD2Aux, 
 VALUES ('MovBobina_Grid', 'MovBobina_Grid', 'Movimentação de bobinas', '', '', 0, 1, '')
 
 INSERT INTO sse2_mnu02 (MnucOd, MnuIteModFlg, MnuIteIde, MnuIteDsc, MnuIteOrd, MnuIteIdRoot, MnuIteTxt, MnuItePth)
-VALUES (10, 1, 'MovBobina_Grid', '', 80, 'SUPRIMENTOS', '', '/pronto/servlet/')
+VALUES (10, 1, 'MovBobina_Grid', '', 80, 'SUPRIMENTOS', '', '/pronto/servlet/') --Alterar o 'pronto' conforme o projeto do cliente atualizado
 
 INSERT INTO sse2_ung_mod (ung2cod, mod2id)
-VALUES (25, 'MovBobina_Grid')
+VALUES (25, 'MovBobina_Grid') --Alterar o '25' conforme a unidade de negócio do cliente atualizado
 
 INSERT INTO sse2_grp_mod
-VALUES (25, 'ADM', 'MovBobina_Grid')
+VALUES (25, 'ADM', 'MovBobina_Grid') --Alterar o '25' conforme a unidade de negócio do cliente atualizado
