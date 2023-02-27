@@ -9,7 +9,7 @@ INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoE
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (3, 'Bancos') 
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (4, 'Antecipações') 
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (5, 'Cessão Realizada') 
-INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (6, 'Recusa da ArqDet') 
+INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (6, 'Recusa de Banco') 
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (7, 'Lançamento Manual') 
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (8, 'Aluguel POS') 
 INSERT INTO [dbo].[ControleSaldoEvento] ([ControleSaldoEventoId],[ControleSaldoEventoDesc]) VALUES (9, 'Prestação de Serviço')
