@@ -40,3 +40,8 @@ GROUP BY EstCod, VlpBnfCod, VlpMovTrnId) A
 
 GO
 
+insert into VlpStatusPag values (
+10, 'Em Analise'
+), (
+11, 'Compensado'
+)
