@@ -260,3 +260,88 @@ ALTER TABLE [Trn12]
 
  ALTER TABLE [MovTrn01]
 ADD [MovTrnTxCobrancaId] VARCHAR(100) NULL
+
+/* SEM TAREFA - LEONARDO */
+
+use pronto
+go
+
+create view ArquivoEfeitoRecusado
+as
+select * from (
+	select b.EfeitoContratoEstCod, b.EfeitoContratoDtaVenc, sum(b.EfeitoContratoVlrRepasse) 'repasse'
+	from arqdet a
+	inner join EfeitoContrato b
+	on a.ArbNum = b.EfeitoContratoArbNum and a.ArbLotNum = b.EfeitoContratoArbLotNum and a.ArbDetSeq = b.EfeitoContratoArbDetSeq
+	where a.ArbDetCodSit not in (0, 4) and b.EfeitoContratoVlrRepasse <> 0
+	group by b.EfeitoContratoEstCod, b.EfeitoContratoDtaVenc
+) a inner join (
+	select EstCod, VlpDtaVct, sum(VlpVlrEfeito) 'vlr_efeito'
+	from VLRPAG
+	group by EstCod, VlpDtaVct
+) b 
+on a.EfeitoContratoEstCod = b.EstCod and a.EfeitoContratoDtaVenc = b.VlpDtaVct
+
+/* SEM TAREFA - LEONARDO */
+
+use credpag
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/024/')
+go
+
+use Banese
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/012/')
+go
+
+use Pronto
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/025/')
+go
+
+use smartpagamentos
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/018/')
+go
+
+use Credinov
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/026/')
+go
+
+use thepay
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/027/')
+go
+
+use estbank
+go
+insert into PARSIS (parcod, ParDsc, ParTipPar, ParTamPar, ParCon)
+values ('DIR_LOG_TMP',	'Arquivo geral de log',	'CA',	300, '/mnt/home1/SubAdquirencia/028/')
+go
+
+/* TAREFA #20867 - JOSÉ */
+
+--Rodar script em todos os clientes que for ser atualizada a versão
+INSERT INTO PARSIS
+VALUES ('ANT_CONSIDERA_NEGATIVO', 'Considera valor negativo (Ajuste e Cancelamento) na antecipação ou não', 'VA', 40, NULL, 'N', 'N', 'ADMIN', '2023-01-23 10:19:57.000', NULL, NULL, 0);
+
+/* TAREFA #20984 - LEONARDO */
+
+CREATE NONCLUSTERED INDEX [UVAN02] ON [VAN02] (
+      [VanWbsHraTrn])
+
+/* TAREFA #21092 - JOSÉ */
+
+--Rodar em todos os clientes que serão atualizados
+CREATE NONCLUSTERED INDEX [UMOVTRN0112] ON [MovTrn01] (
+      [EstCod],
+      [MovTrnCod],
+      [MovTrnDta] DESC);
+
