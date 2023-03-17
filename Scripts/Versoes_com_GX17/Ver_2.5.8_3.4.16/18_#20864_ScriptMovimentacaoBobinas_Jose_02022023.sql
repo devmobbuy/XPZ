@@ -1,5 +1,7 @@
 /* TAREFA #20864 - JOSÉ */
 
+USE Pronto
+
 --Rodar script em todos os clientes que serão atualizados
 CREATE TABLE [MovimentacaoBobina] (
   [MovBobinaId]        INT    NOT NULL    IDENTITY ( 1 , 1 ),
