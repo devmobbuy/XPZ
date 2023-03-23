@@ -188,3 +188,8 @@ CREATE view [dbo].[VlrPag02] as
 	VlpMovTaxaCobrancaId  = ''
 
 GO
+
+/* TAREFA #21507 - JOSÉ */
+
+CREATE NONCLUSTERED INDEX [UVAN042] ON [VAN04] ( 
+      [VanTrnMovId])
